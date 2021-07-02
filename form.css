@@ -1,0 +1,103 @@
+:root {
+    --table-color: rgb(235, 226, 226);
+    --form-color:  rgb(255, 255, 255);
+  }
+
+.error{
+    color: red;
+}
+
+body{
+    text-align: center;
+    background-color: #e7e7e7;
+}
+
+input{
+    margin-bottom: 20px;
+}
+
+#rooms{
+    margin-bottom: 20px;
+}
+
+#userTable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+form{
+    padding-top:10px;
+    padding-bottom: 30px;
+    width:30%;
+    margin-right:20px;
+    background-color: var(--form-color);
+    
+    box-shadow: 0px 0px 10px 1px #888888;
+    text-align: center;
+    /* padding-left: 5%; */
+}
+
+
+#userTable tr:hover {background-color: #ddd;}
+
+#userTable th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(30, 144, 255);
+    color: white;
+    border: 1px solid rgb(207, 207, 207);
+  }
+
+
+#userTable td{
+    border: 1px solid gray;
+    padding: 10px;
+    background-color: white;
+}
+
+#userTable{
+    border-collapse: collapse;
+
+}
+
+form button{
+    width: 40%;
+    background-color: rgb(30, 144, 255);
+    border: 0px;
+    text-align: center;
+    height: 40px;
+    color: white;
+}
+#hideCalendar{
+    border:0px;
+    width: 50%;
+}
+form button:hover,#hideCalendar:hover{
+    background-color: #e7e7e7;
+    border: 1px solid black;
+    color: black;
+}
+
+#btn,#clr{
+    margin:10px;
+}
+
+label{
+    font-weight: bold;
+    margin-top: 3px;
+    display:inline-block;
+}
+
+input[type=text],input[type=date],input[type=number],select{
+    height: 30px;
+    width: 40%;
+}
+
+#showCalendar,#hideCalendar{
+    height:25px;
+    background-color: #e7e7e7;
+    color: black;
+    
+}
