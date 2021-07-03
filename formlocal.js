@@ -66,7 +66,7 @@ form.addEventListener('submit',e=>{
             console.log(val.value);
         }
     }
-    if(!validateCalendar()){
+    if(!validateDates(form.rooms.value)){
         alert('Check calendar for availability');
         return false;
     }
@@ -81,7 +81,7 @@ form.addEventListener('submit',e=>{
     }else{
         console.log(form);
         addUserRequest(e);
-        changeOccupancy();
+        updateOccupancy(new Date(form.startDate.value),new Date(form.endDate.value),form.rooms.value);
         return true;
         //form.submit();
     }

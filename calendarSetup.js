@@ -40,50 +40,50 @@ function updateLocalStorage(){
     localStorage.setItem('occupancyJun',JSON.stringify(occupancyJun));
 }
 
-setLocalStorage(occupancyJun);
+//setLocalStorage(occupancyJun);
 
 console.log('out of calendar setup');
 
 
 //OPERATIONS
 
-function validateCalendar(){
-    // console.log('validating calendar....');
-    // console.log(form.startDate);
-    // console.log(form.startDate.value);
-    let stDate = form.startDate.value.slice(8,10);
-    console.log(stDate);
-    stDate = +stDate;
-    let enDate = form.endDate.value.slice(8,10);
-    enDate = +enDate;
-    let room = form.rooms.value;
-    console.log(room);
-    let checkArr = occupancyJun[room];
-    console.log(checkArr);
-    for(let i = stDate -1 ; i < enDate ; i++){
-        if(checkArr[i]==0){
-            return false;
-        }
-    }
-    console.log('calendar VALIDATED');
-    return true;
-}
+// function validateCalendar(){
+//     // console.log('validating calendar....');
+//     // console.log(form.startDate);
+//     // console.log(form.startDate.value);
+//     let stDate = form.startDate.value.slice(8,10);
+//     console.log(stDate);
+//     stDate = +stDate;
+//     let enDate = form.endDate.value.slice(8,10);
+//     enDate = +enDate;
+//     let room = form.rooms.value;
+//     console.log(room);
+//     let checkArr = occupancyJun[room];
+//     console.log(checkArr);
+//     for(let i = stDate -1 ; i < enDate ; i++){
+//         if(checkArr[i]==0){
+//             return false;
+//         }
+//     }
+//     console.log('calendar VALIDATED');
+//     return true;
+// }
 
-//validateCalendar();
+// //validateCalendar();
 
-function changeOccupancy(){
-    console.log('changing occupancy');
-    let stDate = +form.startDate.value.slice(8,10);
-    let enDate = +form.endDate.value.slice(8,10);
-    let room = form.rooms.value;
-    console.log('room is'+ room);
-    let checkArr = occupancyJun[room];
-    console.log(checkArr);
-    for(let i = stDate -1 ; i < enDate ; i++){
-        checkArr[i]=0;
-    }
-    occupancyJun[room]=checkArr;
-    updateLocalStorage();
-    console.log('occupancy changed');
+// function changeOccupancy(){
+//     console.log('changing occupancy');
+//     let stDate = +form.startDate.value.slice(8,10);
+//     let enDate = +form.endDate.value.slice(8,10);
+//     let room = form.rooms.value;
+//     console.log('room is'+ room);
+//     let checkArr = occupancyJun[room];
+//     console.log(checkArr);
+//     for(let i = stDate -1 ; i < enDate ; i++){
+//         checkArr[i]=0;
+//     }
+//     occupancyJun[room]=checkArr;
+//     updateLocalStorage();
+//     console.log('occupancy changed');
 
-}
+// }

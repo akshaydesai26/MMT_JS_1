@@ -109,14 +109,16 @@ function setOccupied(roomType,month,year){
 }
 
 createCalendar(currentMonth,currentYear);
-setOccupied('Premium',currentMonth,currentYear);
+//setOccupied('Premium',currentMonth,currentYear);
+setCalendar('Premium',currentMonth,currentYear);
 //setOccupied('Premium');
 
 let calendarDropdown = document.querySelector('#calendarDropdown');
 
 calendarDropdown.addEventListener('input',e=>{
     createCalendar(monthInd,currentYear);
-    setOccupied(e.target.value,monthInd,currentYear);
+    //setOccupied(e.target.value,monthInd,currentYear);
+    setCalendar(e.target.value,monthInd,currentYear);
 })
 
 document.querySelector('#previousMonth').addEventListener('click',()=>{
@@ -126,7 +128,9 @@ document.querySelector('#previousMonth').addEventListener('click',()=>{
         currentYear--;
     }
     createCalendar(monthInd,currentYear);
-    setOccupied(calendarDropdown.value,monthInd,currentYear);});
+    //setOccupied(calendarDropdown.value,monthInd,currentYear);
+    setCalendar(calendarDropdown.value,monthInd,currentYear);});
+    
 document.querySelector('#nextMonth').addEventListener('click',()=>{
     monthInd++;
     if(monthInd==12){
@@ -134,4 +138,32 @@ document.querySelector('#nextMonth').addEventListener('click',()=>{
         currentYear++;
     }
     createCalendar(monthInd,currentYear);
-    setOccupied(calendarDropdown.value,monthInd,currentYear);});
+    setCalendar(calendarDropdown.value,monthInd,currentYear);});
+
+
+
+//TEMPORARY TO AVOID ERROR
+
+function setCalendar(roomType,month,year){
+    console.log('SETTING LOCAL CALENDAR');
+    let occupancy = JSON.parse(localStorage.getItem('occupancy'));
+    let tableContent = document.getElementById('calendarBody');
+    console.log(tableContent);
+    let rows = tableContent.rows;
+    console.log(rows);
+    //console.log(rows.item(0));
+    console.log()
+    for(let row of rows){
+        //console.log(row.cells);
+        for(let cell of row.cells){
+            if(cell.innerHTML!='' && occupancy[year] && occupancy[year][month] && occupancy[year][month][roomType].includes(+cell.innerHTML) && cell.style.backgroundColor!="rgb(231, 231, 231)"){
+                //console.log(occupancyJun[roomType][cell.innerHTML]);
+                console.log(cell.innerHTML);
+                cell.innerHTML+='<span class="occupied" style="color:red">&#8226;</span>'
+            }
+            else if(cell.innerHTML!=''&& cell.style.backgroundColor!="rgb(231, 231, 231)"){
+                cell.innerHTML+='<span class="occupied" style="color:#1e941e">&#8226;</span>'
+            }
+        }
+    }
+}
