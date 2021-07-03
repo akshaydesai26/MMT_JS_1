@@ -45,6 +45,7 @@ function updateOccupancy(stDate,endDate,roomType){
 
 function setCalendar(roomType,month,year){
     console.log('SETTING CALENDAR');
+    let occupancy = JSON.parse(localStorage.getItem('occupancy'));
     let tableContent = document.getElementById('calendarBody');
     console.log(tableContent);
     let rows = tableContent.rows;
@@ -54,7 +55,7 @@ function setCalendar(roomType,month,year){
     for(let row of rows){
         //console.log(row.cells);
         for(let cell of row.cells){
-            if(cell.innerHTML!='' && occupancy[year] && occupancy[year][month] && occupancy[year][month][roomType].includes(cell.innerHTML) && cell.style.backgroundColor!="rgb(231, 231, 231)"){
+            if(cell.innerHTML!='' && occupancy[year] && occupancy[year][month] && occupancy[year][month][roomType].includes(+cell.innerHTML) && cell.style.backgroundColor!="rgb(231, 231, 231)"){
                 //console.log(occupancyJun[roomType][cell.innerHTML]);
                 console.log(cell.innerHTML);
                 cell.innerHTML+='<span class="occupied" style="color:red">&#8226;</span>'
