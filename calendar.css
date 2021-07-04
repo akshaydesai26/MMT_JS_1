@@ -8,6 +8,8 @@
     background-color: rgb(30, 144, 255);
     margin-top: 20px;
     border-radius: 5px;
+    display:flex;
+    align-items: center;
 }
 
 #completeBox{
@@ -31,3 +33,7 @@
     background-color: #e7e7e7;
 }
 
+#monthAndYear{
+    margin-left: 10px;
+    color:white;
+}

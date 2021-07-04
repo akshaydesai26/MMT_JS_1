@@ -1,3 +1,18 @@
+document.querySelector('#showCalendar').addEventListener('click',(e)=>{
+    e.preventDefault();
+    document.querySelector('#completeBox').style.display="";
+    document.querySelector('#hideCalendar').style.display="";
+    document.querySelector('#showCalendar').style.display="none";
+    e.stopPropagation();
+})
+
+document.querySelector('#hideCalendar').addEventListener('click',()=>{
+    document.querySelector('#completeBox').style.display="none";
+    document.querySelector('#showCalendar').style.display="";
+    document.querySelector('#hideCalendar').style.display="none";
+})
+
+
 let occupancy = {};
 
 if(!localStorage.getItem('occupancy')){

@@ -1,5 +1,5 @@
 console.log('script functioning');
-
+//NOT USED IN PROGRAM, HAS INDEXED DB
 
 let db=null;
 let btnSubmit = document.querySelector('#btn');

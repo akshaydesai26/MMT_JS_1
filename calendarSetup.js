@@ -1,18 +1,5 @@
 console.log('In calendar setup');
-
-document.querySelector('#showCalendar').addEventListener('click',(e)=>{
-    e.preventDefault();
-    document.querySelector('#completeBox').style.display="";
-    document.querySelector('#hideCalendar').style.display="";
-    document.querySelector('#showCalendar').style.display="none";
-    e.stopPropagation();
-})
-
-document.querySelector('#hideCalendar').addEventListener('click',()=>{
-    document.querySelector('#completeBox').style.display="none";
-    document.querySelector('#showCalendar').style.display="";
-    document.querySelector('#hideCalendar').style.display="none";
-})
+//NOT USED IN PROGRAM, OLD FUNCTION
 
 // let occupancyJun = {
 //     Premium: [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],

@@ -1,5 +1,5 @@
 console.log('in calendar');
-
+//CONTAINS CREATECALENDAR AND EVENT LISTENERS
 let today_c = new Date();
 let currentMonth = today_c.getMonth() +1 ;
 let currentYear = today_c.getFullYear();
@@ -84,29 +84,29 @@ function createCalendar(month,year){
     //setOccupied(document.querySelector('#calendarDropdown').value);
 }
 
-function setOccupied(roomType,month,year){
-    getLocalStorage();
-    let tableContent = document.getElementById('calendarBody');
-    console.log(tableContent);
-    let rows = tableContent.rows;
-    console.log(rows);
-    //console.log(rows.item(0));
-    console.log()
-    for(let row of rows){
-        //console.log(row.cells);
-        for(let cell of row.cells){
-            if(cell.innerHTML!='' && occupancyJun[roomType][cell.innerHTML-1]<=0 && cell.style.backgroundColor!="rgb(231, 231, 231)"){
-                //console.log(occupancyJun[roomType][cell.innerHTML]);
-                console.log(cell.innerHTML);
-                cell.innerHTML+='<span class="occupied" style="color:red">&#8226;</span>'
-            }
-            else if(cell.innerHTML!=''&& cell.style.backgroundColor!="rgb(231, 231, 231)"){
-                cell.innerHTML+='<span class="occupied" style="color:#1e941e">&#8226;</span>'
-            }
-        }
-    }
+// function setOccupied(roomType,month,year){
+//     getLocalStorage();
+//     let tableContent = document.getElementById('calendarBody');
+//     console.log(tableContent);
+//     let rows = tableContent.rows;
+//     console.log(rows);
+//     //console.log(rows.item(0));
+//     console.log()
+//     for(let row of rows){
+//         //console.log(row.cells);
+//         for(let cell of row.cells){
+//             if(cell.innerHTML!='' && occupancyJun[roomType][cell.innerHTML-1]<=0 && cell.style.backgroundColor!="rgb(231, 231, 231)"){
+//                 //console.log(occupancyJun[roomType][cell.innerHTML]);
+//                 console.log(cell.innerHTML);
+//                 cell.innerHTML+='<span class="occupied" style="color:red">&#8226;</span>'
+//             }
+//             else if(cell.innerHTML!=''&& cell.style.backgroundColor!="rgb(231, 231, 231)"){
+//                 cell.innerHTML+='<span class="occupied" style="color:#1e941e">&#8226;</span>'
+//             }
+//         }
+//     }
     
-}
+// }
 
 createCalendar(currentMonth,currentYear);
 //setOccupied('Premium',currentMonth,currentYear);

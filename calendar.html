@@ -11,6 +11,7 @@
     <script defer src="calendar.js"></script>
 </head>
 <body>
+    <!--NOT IN MAIN PROGRAM-->
     <h1>Availability calendar</h1>
     <div id="completeBox">
         <p><strong>Choose room to see availability</strong></p>
@@ -20,8 +21,8 @@
             <option>Budget</option>
         </select>
 
-        <div style="display: flex; align-items: center;" id="calendarHeader">
-            <h3 id="monthAndYear" style="margin-left: 10px; color: white;">Month and year</h3><div style="flex-grow: 3;"></div><button id="previousMonth" style="margin-left: 40px;">Prev</button><button id="nextMonth" style="margin-right: 20px;">Next</button>
+        <div style="display: flex;" id="calendarHeader">
+            <h3 id="monthAndYear">Month and year</h3><div style="flex-grow: 3;"></div><button id="previousMonth" >Prev</button><button id="nextMonth" style="margin-right: 20px;">Next</button>
         </div>
         <table id="calendarTable">
             <thead>
